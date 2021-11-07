@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Paralelo RP</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="imagem/png" href="img/logo.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .jumbotron {
+    background-color: #eca9c3;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    text-shadow: #ffffff 1px 1px 1px;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #eca9c3;
+    font-size: 50px;
+  }
+  .logo {
+    color: #eca9c3;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #eca9c3;
+  }
+  .carousel-indicators li {
+    border-color: #eca9c3;
+  }
+  .carousel-indicators li.active {
+    background-color: #eca9c3;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #eca9c3;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #eca9c3;
+    background-color: #fff !important;
+    color: #eca9c3;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #eca9c3 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #eca9c3;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #eca9c3;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #eca9c3 !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #eca9c3;
+  }
+  a{
+    color: #eca9c3;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  a:hover{
+    color: #eca9c3;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myPage"><img src="https://cdn.discordapp.com/attachments/784600821542944782/824371164318531587/logo_copia.png" width="30" height="30"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">SOBRE</a></li>
+        <li><a href="#contatos">CONTATOS</a></li>
+        <li><a href="#doacoes">DOAÇÕES</a></li>
+        <li><a href="#veiculos">VEÍCULOS</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Paralelo Roleplay</h1>
+  <p>O melhor RP de sua vida!</p>
+  <button class="btn btn-default"><a href="fivem://connect/cfx.re/join/mpoama">JOGAR</a></button>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="img/gifp.gif" width="400px" height="400px">
+      <!--<span class="glyphicon glyphicon-globe logo slideanim"></span>-->
+    </div>
+    <div class="col-sm-8">
+      <h2>Sobre nós</h2><br>
+      <h4>Conheça Paralelo Roleplay, uma cidade otimizada e com vários diferenciais, focando sempre no melhor RP. No Paralelo você tem a oportunidade de ser quem você quiser!<br> Leia as regras e evitar punições; <br>  Respeite o RP de outros jogadores;</h4><br>
+      <p>#RespeitaAsMina</p>
+      <p>#ParaleloRP</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="contatos" class="container-fluid text-center">
+  <h2>NOSSAS REDES</h2>
+  <h4>Contate-nos para mais informações | Suporte 24/7 |</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <center><a href="https://www.instagram.com/paraleloroleplay/" target="_blank"><img src="https://image.flaticon.com/icons/png/512/87/87390.png" color="#fff" width="50px" height="50px"></a></center>
+      <h4>INSTAGRAM</h4>
+      <p>@paraleloroleplay</p>
+    </div>
+    <div class="col-sm-4">
+      <center><a href="https://discord.com/invite/KVRDRKbmXM" target="_blank"><img src="https://img.icons8.com/ios/452/discord-logo.png" color="#fff" width="50px" height="50px"></a></center>
+      <h4>DISCORD</h4>
+      <p>discord.me/paralelorp</p>
+    </div>
+    <div class="col-sm-4">
+      <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/TK_email_icon.svg/1200px-TK_email_icon.svg.png" color="#fff" width="50px" height="50px"></center>
+      <h4>Email</h4>
+      <p>paraleloroleplay@gmail.com</p>
+    </div>
+  </div>
+  <br><br>
+</div>
+
+<!-- Container (Pricing Section) -->
+<div id="doacoes" class="container-fluid">
+  <div class="text-center">
+    <h2>Doações</h2>
+    <h4>Escolha o melhor método de pagamento para você</h4>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Benefício</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>100.000</strong> Iniciais</p>
+          <p><strong>5.000</strong> Salário</p>
+          <p><strong>20%</strong> Prioridade na fila</p>
+          <p><strong>+3</strong> Vagas na garagem</p>
+          <p><strong>5%</strong> Desconto na concessionária</p>
+          <p>.</p>
+          <p>.</p>
+          <p>.</p>
+        </div>
+        <div class="panel-footer">
+          <h3>R$20</h3>
+          <h4>por mês</h4>
+          <a href="https://discord.com/channels/782737339637301258/782737340077572151" target="_blank"><button class="btn btn-lg">Adquira</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Investidor</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>200.000</strong> Iniciais</p>
+          <p><strong>7.000</strong> Salário</p>
+          <p><strong>40%</strong> Prioridade na fila</p>
+          <p><strong>+4</strong> Vagas na garagem</p>
+          <p><strong>10%</strong> Desconto na concessionária</p>
+          <p><strong>🔈</strong> Acesso a caixa de som</p>
+          <p>.</p>
+          <p>.</p>
+        </div>
+        <div class="panel-footer">
+          <h3>R$40</h3>
+          <h4>por mês</h4>
+          <a href="https://discord.com/channels/782737339637301258/782737340077572151" target="_blank"><button class="btn btn-lg">Adquira</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Sócio</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>300.000</strong> Iniciais</p>
+          <p><strong>10.000</strong> Salário</p>
+          <p><strong>60%</strong> Prioridade na fila</p>
+          <p><strong>+5</strong> Vagas na garagem</p>
+          <p><strong>15%</strong> Desconto na concessionária</p>
+          <p><strong>🔈</strong> Acesso a caixa de som</p>
+          <p><strong>1 Carro exclusívo</strong> 1 Mansão exclusíva</p>
+          <p>.</p>
+        </div>
+        <div class="panel-footer">
+          <h3>R$80</h3>
+          <h4>por mês</h4>
+          <a href="https://discord.com/channels/782737339637301258/782737340077572151" target="_blank"><button class="btn btn-lg">Adquira</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Paralelo</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>500.000</strong> Iniciais</p>
+          <p><strong>17.000</strong> Salário</p>
+          <p><strong>80%</strong> Prioridade na fila</p>
+          <p><strong>+7</strong> Vagas na garagem</p>
+          <p><strong>25%</strong> Desconto na concessionária</p>
+          <p><strong>🔈</strong> Acesso a caixa de som</p>
+          <p><strong>2 Carros exclusívos</strong> 1 Mansão exclusíva</p>
+          <p><strong>1 </strong> Helicóptero</p>
+        </div>
+        <div class="panel-footer">
+          <h3>R$150</h3>
+          <h4>por mês</h4>
+          <a href="https://discord.com/channels/782737339637301258/782737340077572151" target="_blank"><button class="btn btn-lg">Adquira</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="veiculos" class="container-fluid text-center bg-grey">
+  <h2>Veículos</h2><br>
+  <h4>Faça a melhor escolha, o que mais combina com você!</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/1.png" alt="R1250" width="400" height="300">
+        <p><strong>R1250</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/2.png" alt="S1000" width="400" height="300">
+        <p><strong>S1000</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/3.png" alt="Pagani" width="400" height="300">
+        <p><strong>Pagani</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/4.png" alt="BMWI8" width="400" height="300">
+        <p><strong>BMW i8 Liberty Walk</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/5.png" alt="NISSANGTR" width="400" height="300">
+        <p><strong>Nissan GTR</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/6.png" alt="RAPTOR" width="400" height="300">
+        <p><strong>Raptor</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/7.png" alt="BOLIDE" width="400" height="300">
+        <p><strong>Porsche Bolide</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/8.png" alt="URSA" width="400" height="300">
+        <p><strong>Porsche Ursa</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/9.png" alt="LAFERRARI" width="400" height="300">
+        <p><strong>La Ferrari</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/10.png" alt="720S" width="400" height="300">
+        <p><strong>McLaren 720S</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/11.png" alt="430S" width="400" height="300">
+        <p><strong>Ferrari 430S</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/12.png" alt="CORONET" width="400" height="300">
+        <p><strong>Dodge Coronet</strong></p>
+        <p>R$ 25,00</p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Paralelo Roleplay ©</p>
+  <p>Todos os direitos reservados</p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+</body>
+</html>
